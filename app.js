@@ -1,6 +1,7 @@
 const express = require('express')
 const DB = require("./db");
 const path = require('path')
+const pathview = require('path')
 var cors = require('cors');
 var bodyparser = require("body-parser")
 const bcrypt = require('bcrypt');
@@ -20,7 +21,7 @@ const AppRoutes = require("./src/routes/router")
 app.use(AppRoutes);
 app.use(express.json());
 app.set('view engine', 'ejs');
-app.set('views', path.join('src/views'));
+app.set('views', pathview.join('src/views'));
 app.use(cors()) // Use this after the variable declaration
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
