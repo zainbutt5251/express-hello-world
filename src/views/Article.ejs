@@ -1,0 +1,60 @@
+<%- include('partials/navbar') %>
+<%- include('partials/menu') %>
+
+    <section class="vh-100 bg-image"
+        style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-center" id="title"></h2>
+                                <hr>
+                                <img  id="image" src="http://localhost:3000/img/nodejs-logo.png" alt="">
+                                <b>
+
+                                   
+                                    <p id="text"> </p>
+                                </b>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            if (localStorage.getItem("user")) {
+                $("#username").html(localStorage.getItem("user"))
+                $("#useremail").html(localStorage.getItem("useremail"))
+                $("#usertype").html(localStorage.getItem("usertype"))
+            } else {
+                window.location.href = "/login";
+            }
+            $.ajax({
+            type: 'get',
+            url: '/getArticle',
+            success: function (response) {
+                console.log(response)
+                $("#title").html(response.items[0].title)
+                $("#text").html(response.items[0].text)
+               setTimeout(() => {
+                $("#image").attr("src",response.items[0].image)
+               }, 1000);
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        });
+
+        });
+ 
+  
+
+
+    </script>
+    <%- include('partials/footer') %>
