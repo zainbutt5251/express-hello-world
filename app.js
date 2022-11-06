@@ -1,6 +1,5 @@
 const express = require('express')
 const DB = require("./db");
-const pathview = require('path')
 var cors = require('cors');
 var bodyparser = require("body-parser")
 const bcrypt = require('bcrypt');
@@ -10,17 +9,11 @@ const app = express()
 
 // #############################################################################
 // Logs all request paths and method
-app.use(function (req, res, next) {
-  res.set('x-timestamp', Date.now())
-  res.set('x-powered-by', 'cyclic.sh')
-  console.log(`server start`);
-  next();
-});
+// 
 const AppRoutes = require("./src/routes/router")
 app.use(AppRoutes);
 app.use(express.json());
 app.set('view engine', 'ejs');
-app.set('views', pathview.join('src/views'));
 app.use(cors()) // Use this after the variable declaration
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -84,7 +77,7 @@ var options = {
   maxAge: '1m',
   redirect: false
 }
-app.use(express.static('public', options))
+app.use(express.static('src/views', options))
 
 // #############################################################################
 // Catch all handler for all other request.
