@@ -1,6 +1,5 @@
 const express = require('express')
 const DB = require("./db");
-const path = require('path')
 const pathview = require('path')
 var cors = require('cors');
 var bodyparser = require("body-parser")
@@ -14,7 +13,7 @@ const app = express()
 app.use(function (req, res, next) {
   res.set('x-timestamp', Date.now())
   res.set('x-powered-by', 'cyclic.sh')
-  console.log(`[${new Date().toISOString()}] ${req.ip} ${req.method} ${req.path}`);
+  console.log(`server start`);
   next();
 });
 const AppRoutes = require("./src/routes/router")
