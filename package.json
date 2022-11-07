@@ -1,23 +1,14 @@
 {
-  "name": "express-hello-world",
+  "name": "assignment3final",
   "version": "1.0.0",
-  "description": "Expressjs Hello World example to provide faster start deploying on Cyclic platform",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "serve": "nodemon --watch . server.js",
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cyclic-software/express-hello-world.git"
-  },
-  "author": "Cyclic Software",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cyclic-software/express-hello-world/issues"
-  },
-  "homepage": "https://github.com/cyclic-software/express-hello-world#readme",
+  "author": "NONE",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "bootstrap": "^5.2.2",
@@ -32,8 +23,5 @@
     "cors": "^2.8.5",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
   }
 }

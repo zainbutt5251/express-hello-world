@@ -15,7 +15,7 @@ const AppRoutes = require("./src/routes/router")
 app.use(AppRoutes);
 app.use(express.json());
 app.set('view engine', 'ejs');
-
+app.use('/images', express.static(path.join(__dirname, 'public/images')))
 app.use(cors()) // Use this after the variable declaration
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -27,6 +27,7 @@ app.post("/postlogin", async (req, res) => {
       res.status(200).json({ message: "All input is required" });
     }
     const user = await User.findOne({ email });
+    
     if (user && (await bcrypt.compare(password, user.password))) {
       res.status(200).json({ message: user.username, email: user.email, type: user.type, succes: "Goodluck" });
     }
@@ -38,11 +39,12 @@ app.post("/postlogin", async (req, res) => {
 app.post("/register", async (req, res) => {
 
   try {
-    const { username, email, password, passwordConf } = req.body;
+    const { username, email, tel, company, address, address2, City, Postcode, Province, Country, txtid, password, passwordConf } = req.body;
     if (username.lenght < 5) {
-      res.status(200).json("password lenght must be 5")
+      res.status(200).json("firstname lenght must be 5")
     }
-    if (!(email && password && username)) {
+
+    if (!(email && password && username && tel && company && address && address2 && City && Postcode && Province && Country)) {
       res.status(200).json({ message: "All input is required" });
     }
     if (password !== passwordConf) {
@@ -60,6 +62,15 @@ app.post("/register", async (req, res) => {
       username,
       email: email.toLowerCase(), // sanitize: convert email to lowercase
       password: encryptedPassword,
+      tel: tel,
+      company: company,
+      address: address,
+      address2: address2,
+      City: City,
+      Postcode: Postcode,
+      Province: Province,
+      Country: Country,
+      txtid: txtid,
       type: "user",
     });
     // return new user

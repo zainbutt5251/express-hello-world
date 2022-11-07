@@ -1,0 +1,297 @@
+<%- include('partials/navbar') %>
+
+
+  <style>
+    .signButt {
+      background-color: blue;
+      width: 100%;
+      color: white;
+    }
+
+    .signButt:hover {
+      opacity: 0.7;
+    }
+
+
+    .form-control {
+
+      border-radius: 1px;
+      color: inherit;
+      display: block;
+      padding: 6px 12px;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .form-control {
+      box-shadow: none;
+    }
+
+    .content {
+      background-color: #ffffff;
+      color: inherit;
+      padding: 20px 20px 20px 20px;
+      border-color: #ffeb3b;
+      border-width: 1px;
+      margin-bottom: 100px;
+    }
+
+    .page {
+      background: linear-gradient(#4f2ad1, #d14053);
+    }
+
+    .header3 {
+      color: white;
+      text-align: center;
+    }
+
+    .field {
+      color: blue;
+      font-size: 20px;
+    }
+
+    .pass-str {
+      text-align: center;
+      color: black;
+    }
+
+    .tAndc {
+      text-align: center;
+      background-color: coral;
+      color: red;
+    }
+
+    .login-container {
+      max-width: 800px;
+      z-index: 100;
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+
+
+    .logoImg {
+      height: 80px;
+      width: 90px;
+      border-radius: 50%;
+      margin-left: 44%;
+    }
+
+    .required {
+      color: red;
+    }
+  </style>
+  <div class="login-container">
+    <div>
+      <h1>
+        <a href="/"><img src="images/newLogo.jpg" class="logoImg" /></a>
+      </h1>
+
+    </div>
+    <h3 class="header3">Create an Account</h3>
+    <div class="content">
+      <div class="mssg bg-info shadow text-center text-white " style="border-radius: 10px;">
+        <span id="check"></span>
+      </div>
+      <form id="form1">
+        <fieldset>
+          <legend class="text-center field">Personal Information</legend>
+          <div class="container">
+
+            <div class="row text-decoration">
+
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <input type="text" class="form-control" name="username" placeholder="User Name" required="" ; />
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <input type="email" class="form-control" name="email" placeholder="Email" required="" ; />
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <input type="tel" name="tel" class="form-control" placeholder="Phone Number"
+                  pattern="(?=.*\d)(?=.*[0-9]).{10,10}" title="Enter only numbers" id="PhoneNum" required="" ; />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+
+        <fieldset>
+          <legend class="text-center field">Billing Address</legend>
+          <div class="container">
+            <div class="row text-decoration">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <input type="text" class="form-control" name="company" placeholder="Company Name(Optional)" />
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <input type="text" name="address" class="form-control" placeholder="Street Address" required="" ; />
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <input type="text" name="address2" class="form-control" placeholder="Street Address2" />
+              </div>
+
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <input type="text" class="form-control" placeholder="City" name="City" required="" />
+              </div>
+
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <input type="text" class="form-control" name="Postcode" placeholder="Postcode" required="" />
+              </div>
+
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <input type="text" class="form-control" placeholder="Province" name="Province" required="" />
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <input type="text" class="form-control" name="Country" placeholder="Country" />
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <input type="text" class="form-control" name="txtid" placeholder="Tax ID (Optional)" />
+              </div>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend class="text-center field">Account Security </legend>
+          <div class="container">
+            <div class="row text-decoration">
+              <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 col-xl-12">
+                <input type="password" class="form-control" placeholder="password" required="" name="password" />
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 col-xl-12">
+                <input type="password" class="form-control" placeholder="passwordConf" required=""
+                  name="passwordConf" />
+              </div>
+            </div>
+          </div>
+
+
+
+        </fieldset>
+
+        <h3 class="tAndc">Term of Service</h3>
+        <input type="checkbox" id="terms" name="terms" required="">
+        <label for="terms">By submitting this order, you agree to the Terms of Service and Privacy Policy.
+          You agree that WHC will automatically attempt to renew your services prior to their next due
+          date unless you request otherwise from your Client Area.</label><br><br>
+
+
+       <div class="row">
+        <div class="col-md-12">
+          <button type="button" onclick="Register()" class="btn  w-100 btn-success btn-block btn-lg gradient-custom-4 text-body"
+          value="Register">Register</button>
+        </div>
+       </div>
+        Already a Client?<a href="/login"> Log In</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- <section class="vh-100 bg-image"
+    style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                <div class="mssg bg-info shadow text-center text-white " style="border-radius: 10px;">
+                  <span id="check"></span>
+                </div>
+                <form id="form1">
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="username" placeholder="Username" required="" class="form-control">
+                    <label class="form-label" for="form3Example1cg">UserName</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" name="email" placeholder="E-mail" required="" class="form-control" />
+                    <label class="form-label" for="form3Example3cg">Email</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" name="password" placeholder="Password" required="" class="form-control">
+                    <label class="form-label" for="form3Example4cg">Password</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" name="passwordConf" placeholder="Confirm Password" required=""
+                      class="form-control">
+                    <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                  </div>
+
+
+
+                  <div class="d-flex justify-content-center">
+                    <button type="button" onclick="Register()"
+                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                      value="Register">Register</button>
+
+                  </div>
+
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="login"
+                      class="fw-bold text-body"><u>Login here</u></a></p>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <script type="text/javascript">
+    function Register() {
+
+
+      $.ajax({
+        type: 'POST',
+        url: '/Register',
+        data: $('#form1').serialize(),
+        dataType: "json",
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        success: function (response) {
+          //alert("a");
+
+          // $('#form1')[0].reset();
+
+          $("#check").html(response.message);
+          //ADD THIS CODE
+          if (response.succes) {
+            localStorage.setItem("user", response.message)
+            localStorage.setItem("useremail", response.email)
+            localStorage.setItem("usertype", response.type)
+
+            $("#check").html("Hy" + localStorage.setItem("user", response.message) + " Register Successfully..!")
+
+          };
+          setTimeout(function () {
+            $("#check").html("");
+            window.location.href = "/Dashboard";
+          }, 3000);
+
+        },
+        error: function (err) {
+          console.log(err)
+        }
+      });
+
+
+    }
+  </script>
+  <%- include('partials/footer') %>
