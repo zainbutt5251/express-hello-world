@@ -1,172 +1,50 @@
 <%- include('partials/navbar') %>
+<%- include('partials/menu') %>
 
+    <section class="vh-100 bg-image"
+        style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-center" id="title"></h2>
+                                <hr>
+                                <img  id="image" src="http://localhost:3000/img/nodejs-logo.png" alt="">
+                                <b>
 
-    <section>
-        <!--nevigation bar-->
-        <div class="container-fiuid">
-            <ul>      
-                <a href="/"><img class="logo_style" src="images/web-hosting-logo.png" alt="canadian_web_hosting logo"></a>     
-                <li><a href="/login">Login</a></li>>
-                <li><a href="/register">Register</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/">Home</a></li>                                                                                             
-                
-            </ul>
-              <br>
-              <br>
-        </div> 
-    </section>
-
-
-
-
-    <header class="entry-header text-center">
-        <div class="justify-content-md-center">
-            <div class="col-12" style="text-shadow: 0 0 50px rgba(0,0,0,0.8);">
-                <h1 class="entry-title">Web Hosting Canada’s Blog</h1>
+                                   
+                                    <p id="text"> </p>
+                                </b>
+                             
+                            </div>
                         </div>
-        </div>
-    </header>
-    <br><br>
-    <section>
-        <!-- search Section-->
-        <div class="container">
-            <div class="row">
-               <form class="search col-12">       
-                   <input type="text" class="" placeholder="Search Here" id="search" onkeydown="clickesssswff()"><br>                                                
-             </form>
+                    </div>
+                </div>
             </div>
         </div>
-     
-   </section>
-
-
-    <section class="content px-3 py-5 p-md-5">
-        <div class="container" id="appenddata">
-           
-         
-            
-            
-            
-        </div>
-        <nav class="blog-nav nav nav-justified my-5">
-            <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-            <a class="nav-link-next nav-item nav-link rounded" href="#">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
-          </nav>
     </section>
-
-
-
-
-
-    <!--footer section-->
-
-    <div class="foot2">
-        <div class="container-fiuid">
-            <div class="row text-center">    
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 col-xl-2">
-                    <h4>Hoasting & Servers</h4>
-                    <p>Canadian Web Hoasting</p>
-                    <p>Canadian Cloud Servers</p>
-                    <p>Reseller Web Hoasting</p>
-                    <p>Dedicated Servers</p>
-                    <p>Managed Wordpress</p>
-                    <p>Anycast DNS</p>
-                    <p>Free website Migration</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 col-xl-2">
-                    <h4>Domains & Websites</h4>
-                    <p>Domain Name Search</p>
-                    <p>Domain Name Transfer</p>
-                    <p>Weebly Site Builder</p>                        
-                </div>
-
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 col-xl-2">
-                    <h4>Security & SSL</h4>
-                    <p>SSL Certificates</p>
-                    <p>SiteSafe Protection</p>
-                    <p>Enterprise Anti-Spam</p>
-                    <p>Domain Privacy Protection</p>                    
-                </div>
-
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 col-xl-2">
-                    <h4>Online Marketing</h4>
-                    <p>Search Engine Optimization</p>
-                    <p>Email Marketing</p>
-                    <p>Affiliate Program</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 col-xl-2">
-                    <h4>Company</h4>
-                    <p>Blog & News</p>
-                    <p>About WHC</p>
-                    <p>WHC Reviewssting</p>
-                    <p>Green Web Hosting</p>
-                    <p>Contact us</p>
-                    <p>Careers</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 col-xl-2">
-                    <h4>Support</h4>
-                    <p>Help Center</p>
-                    <p>Open Support Ticket</p>
-                    <p>Check System Status</p>
-                </div>    
-                
-            </div>
-            <br>
-            <hr>
-        
-            <div class="row">
-                <div>
-                    <h5>FOLLOW US</h5>
-                </div>
-                <div>
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-linkedin"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                    <a href="#" class="fa fa-youtube"></a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-
-
 
     <script>
-        function clickesssswff(){
-            var searcgh=$("#search").val();
-console.log(searcgh)
-        }
         $(document).ready(function () {
-            // if (localStorage.getItem("user")) {
-            //     $("#username").html(localStorage.getItem("user"))
-            //     $("#useremail").html(localStorage.getItem("useremail"))
-            //     $("#usertype").html(localStorage.getItem("usertype"))
-            // } else {
-            //     window.location.href = "/login";
-            // }
+            if (localStorage.getItem("user")) {
+                $("#username").html(localStorage.getItem("user"))
+                $("#useremail").html(localStorage.getItem("useremail"))
+                $("#usertype").html(localStorage.getItem("usertype"))
+            } else {
+                window.location.href = "/login";
+            }
             $.ajax({
             type: 'get',
             url: '/getBlogs',
             success: function (response) {
-              
-                for(var i=0;i<response.items.length;i++){
-                    $("#appenddata").append(`<div class="post">
-                <div class="media">
-                    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="${response.items[i].image}" alt="image">
-                    <div class="media-body">
-                        <h3 class="title mb-1"><a href="#">${response.items[i].title}</a></h3>
-                        <div class="meta mb-1"><span class="date">Published 3 months ago</span><span class="time">2 min read</span><span class="comment"><a href="#">1 comment</a></span></div>
-                        <div class="intro">${response.items[i].text}</div>
-                        <a class="more-link" href="#">Read more &rarr;</a>
-                    </div>
-                </div>
-            </div>`)
-                }
+                console.log(response)
+                $("#title").html(response.items[0].title)
+                $("#text").html(response.items[0].text)
+               setTimeout(() => {
+                $("#image").attr("src",response.items[0].image)
+               }, 1000);
             },
             error: function (err) {
                 console.log(err)

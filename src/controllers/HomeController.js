@@ -3,10 +3,7 @@ const Article = require("../models/Article")
 
 
 exports.homepage = (req, res) => {
-    res.render('home.ejs');
-};
-exports.register = (req, res) => {
-    res.render('register.ejs');
+    res.render('index.ejs');
 };
 exports.login = (req, res) => {
     console.log("i,m in login page")

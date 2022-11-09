@@ -1,135 +1,50 @@
 <%- include('partials/navbar') %>
 
-  <style>
-    body {
-      background: linear-gradient(#4f2ad1, #d14053);
-    }
+  <section class="vh-100 bg-image"
+    style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Login Here</h2>
+                <div class="mssg bg-info shadow text-center text-white " style="border-radius: 10px;">
+                  <span id="check"></span>
+                </div>
+                <form id="form1">
 
-    .login-container {
-      background-color: white;
-      max-width: 350px;
-      z-index: 100;
-      margin-top: 100px;
-      margin-bottom: 100px;
-      margin-left: 37%;
-      padding-top: 100px;
 
-    }
+                  <div class="form-outline mb-4">
+                    <input type="email" name="email" id="email" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example3cg">Email</label>
+                  </div>
 
-    .logoImg {
-      height: 100px;
-      width: 110px;
-      border-radius: 50%;
-      margin-left: 35%;
-      margin-top: -60px;
-    }
+                  <div class="form-outline mb-4">
+                    <input type="password" name="password" id="password" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example4cg">Password</label>
+                  </div>
 
-    .header3 {
-      color: black;
-      text-align: center;
-    }
 
-    .form-control {
 
-      border-radius: 1px;
-      color: inherit;
-      display: block;
-      padding: 6px 12px;
-      width: 90%;
 
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+                  <div class="d-flex justify-content-center">
+                    <buttontype="button" onclick="login()" 
+                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                  </div>
 
-    .form-control {
-      box-shadow: none;
-    }
+                  <p class="text-center text-muted mt-5 mb-0">Don't Have an account? <a href="/"
+                      class="fw-bold text-body"><u>Register here</u></a></p>
 
-    .checkBox {
-      text-align: center;
-    }
+                </form>
 
-    .forget-pass {
-      text-align: center;
-      color: black;
-    }
-
-    .forget-pass :hover {
-
-      color: blue;
-      transition: 0.3s;
-    }
-
-    .forget-password {
-      text-align: center;
-    }
-
-    .log-butt {
-      width: 90%;
-      height: 45px;
-      margin-left: 10px;
-      margin-right: 10px;
-      color: white;
-      background-color: rgb(69, 69, 212);
-
-    }
-
-    .last-row {
-      background-color: burlywood;
-      height: 55px;
-      width: 100%;
-      margin-top: 45px;
-    }
-
-    .link-sign {
-      margin-top: 20px;
-      margin-left: 30px;
-    }
-  </style>
-  <div class="login-container">
-    <div>
-      <h1>
-        <a href="home.html"><img src="images/newLogo.jpg" class="logoImg" /></a>
-      </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h3 class="header3">Sign In Web Hosting</h3>
-    <div class="mssg bg-info shadow text-center text-white " style="border-radius: 10px;">
-      <span id="check"></span>
-    </div>
-    <form id="form1">
-      <div>
-
-      </div>
-      <div class="form-group">
-        <input type="email" class="form-control" name="email" id="email" placeholder="email" required="" />
-      </div>
-      <div class="form-group">
-        <input type="password" name="password" id="password" class="form-control"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[1-9]).{6,12}"
-          title=" password must be 6 to 12 characters and the password must have capital and small letters and numbers"
-          placeholder="password" required="" />
-      </div>
-
-      <br>
-      <div class="checkBox">
-        <input type="checkbox" id="terms" name="terms" required="">
-
-        <label for="terms"> Remember Me</label><br><br>
-      </div>
-
-      <div class="forget-password"><a class="forget-pass" href="#">Forgot Password?</a></div>
-
-      <br>
-      <button type="button" onclick="login()" class="log-butt" formaction="home.html">Log In</button>
-
-
-
-      <div class="last-row">
-        <p class="link-sign"> Need to WHC?<a href="/register"> Sign up</a></p>
-      </div>
-    </form>
-
-  </div>
+  </section>
 
   <script type="text/javascript">
     function login() {
@@ -153,7 +68,7 @@
             localStorage.setItem("useremail", response.email)
             localStorage.setItem("usertype", response.type)
 
-            document.getElementById("check").innerHTML = "Hy  " + localStorage.getItem("useremail") + " you are  Login  Successfully..!";
+            document.getElementById("check").innerHTML = "Hy  " + localStorage.getItem("useremail")+" you are  Login  Successfully..!";
 
 
           };

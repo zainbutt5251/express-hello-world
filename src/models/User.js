@@ -20,34 +20,7 @@ const User = new Schema({
   },
   type:{
     type: String,
-  },
-  tel:{
-    type: String,
-  },
-  company:{
-    type: String,
-  },
-  address:{
-    type: String,
-  },
-  address2:{
-    type: String,
-  },
-  City:{
-    type: String,
-  },
-  Postcode:{
-    type: String,
-  },
-  Province:{
-    type: String,
-  },
-  Country:{
-    type: String,
-  },
-  txtid:{
-    type: String,
-  },
+  }
 }, {
   timestamps: true,
 });
